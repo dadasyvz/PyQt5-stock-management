@@ -1,0 +1,118 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'main_screen.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.1
+#
+# WARNING! All changes made in this file will be lost!
+
+import sqlite3
+from PyQt5 import QtCore, QtGui, QtWidgets
+from market.kasa_ekrani import Ui_MainWindow_3
+from market.sorumlu_ekrani import Ui_MainWindow_2
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(600, 500)
+        MainWindow.setMinimumSize(QtCore.QSize(600, 500))
+        MainWindow.setMaximumSize(QtCore.QSize(600, 500))
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox.setGeometry(QtCore.QRect(30, 20, 501, 371))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox.setFont(font)
+        self.groupBox.setObjectName("groupBox")
+        self.label = QtWidgets.QLabel(self.groupBox)
+        self.label.setGeometry(QtCore.QRect(30, 60, 131, 41))
+        self.label.setObjectName("label")
+        self.lineEdit = QtWidgets.QLineEdit(self.groupBox)
+        self.lineEdit.setGeometry(QtCore.QRect(160, 70, 291, 31))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.groupBox)
+        self.lineEdit_2.setGeometry(QtCore.QRect(160, 120, 291, 31))
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.label_2 = QtWidgets.QLabel(self.groupBox)
+        self.label_2.setGeometry(QtCore.QRect(30, 110, 131, 51))
+        self.label_2.setObjectName("label_2")
+        self.pushButton = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton.setGeometry(QtCore.QRect(40, 200, 171, 71))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_2.setGeometry(QtCore.QRect(270, 200, 171, 71))
+        self.pushButton_2.setObjectName("pushButton_2")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 22))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "                                                             KULLANICI GIRISI"))
+        self.groupBox.setTitle(_translate("MainWindow", "Giris Bilgileri"))
+        self.label.setText(_translate("MainWindow", "Sicil"))
+        self.label_2.setText(_translate("MainWindow", "Sifre"))
+        self.pushButton.setText(_translate("MainWindow", "Giris"))
+        self.pushButton_2.setText(_translate("MainWindow", "Iptal"))
+
+        #####################1111###############
+
+        self.pushButton.clicked.connect(self.Login)
+
+        ################2#########################
+
+        self.pushButton_2.clicked.connect(self.Exit)
+
+
+
+
+    def Login(self):
+        self.baglanti=sqlite3.connect("stock.db")
+        self.cur=self.baglanti.cursor()
+
+        self.cur.execute('Select * From user')
+        data=self.cur.fetchall()
+        print(data)
+
+        id=self.lineEdit.text()
+        # print(type(id))
+        password=self.lineEdit_2.text()
+        # print(id, password)
+
+        for i in data:
+            if id==str(i[2]) and password==str(i[1]):
+                if i[3]=="M":
+                    self.ui = Ui_MainWindow_2()
+                    self.ui.setupUi(MainWindow)
+                elif i[3]=="C":
+                    self.ui = Ui_MainWindow_3()
+                    self.ui.setupUi(MainWindow)
+
+
+    def Exit(self):
+        quit()
+
+
+
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
