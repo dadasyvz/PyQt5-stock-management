@@ -1,0 +1,542 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'sorumlu_ekrani.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.1
+#
+# WARNING! All changes made in this file will be lost!
+
+import sqlite3
+from PyQt5 import QtCore, QtGui, QtWidgets
+# from market.main_screen_ import MainWindow
+
+
+class Ui_MainWindow_2(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(900, 800)
+        MainWindow.setMinimumSize(QtCore.QSize(900, 800))
+        MainWindow.setMaximumSize(QtCore.QSize(900, 800))
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabWidget.setGeometry(QtCore.QRect(30, 10, 891, 661))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.tabWidget.setFont(font)
+        self.tabWidget.setObjectName("tabWidget")
+        self.tab = QtWidgets.QWidget()
+        self.tab.setObjectName("tab")
+        self.label = QtWidgets.QLabel(self.tab)
+        self.label.setGeometry(QtCore.QRect(20, 50, 231, 41))
+        self.label.setObjectName("label")
+        self.comboBox = QtWidgets.QComboBox(self.tab)
+        self.comboBox.setGeometry(QtCore.QRect(210, 50, 331, 31))
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.label_2 = QtWidgets.QLabel(self.tab)
+        self.label_2.setGeometry(QtCore.QRect(20, 160, 141, 16))
+        self.label_2.setObjectName("label_2")
+        self.lineEdit = QtWidgets.QLineEdit(self.tab)
+        self.lineEdit.setGeometry(QtCore.QRect(210, 150, 331, 31))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.tab)
+        self.lineEdit_2.setGeometry(QtCore.QRect(210, 210, 331, 31))
+        self.lineEdit_2.setText("")
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.label_3 = QtWidgets.QLabel(self.tab)
+        self.label_3.setGeometry(QtCore.QRect(20, 220, 141, 16))
+        self.label_3.setObjectName("label_3")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.tab)
+        self.lineEdit_3.setGeometry(QtCore.QRect(210, 270, 331, 31))
+        self.lineEdit_3.setText("")
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.label_4 = QtWidgets.QLabel(self.tab)
+        self.label_4.setGeometry(QtCore.QRect(20, 280, 141, 16))
+        self.label_4.setObjectName("label_4")
+        self.pushButton = QtWidgets.QPushButton(self.tab)
+        self.pushButton.setGeometry(QtCore.QRect(600, 110, 221, 41))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(self.tab)
+        self.pushButton_2.setGeometry(QtCore.QRect(600, 180, 221, 41))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.tab)
+        self.pushButton_3.setGeometry(QtCore.QRect(600, 250, 221, 41))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.textBrowser = QtWidgets.QTextBrowser(self.tab)
+        self.textBrowser.setGeometry(QtCore.QRect(210, 330, 331, 192))
+        self.textBrowser.setObjectName("textBrowser")
+        self.lineEdit_7 = QtWidgets.QLineEdit(self.tab)
+        self.lineEdit_7.setGeometry(QtCore.QRect(210, 100, 331, 31))
+        self.lineEdit_7.setText("")
+        self.lineEdit_7.setObjectName("lineEdit_7")
+        self.label_9 = QtWidgets.QLabel(self.tab)
+        self.label_9.setGeometry(QtCore.QRect(20, 110, 141, 16))
+        self.label_9.setObjectName("label_9")
+        self.tabWidget.addTab(self.tab, "")
+        self.tab_2 = QtWidgets.QWidget()
+        self.tab_2.setObjectName("tab_2")
+        self.label_5 = QtWidgets.QLabel(self.tab_2)
+        self.label_5.setGeometry(QtCore.QRect(40, 80, 221, 16))
+        self.label_5.setObjectName("label_5")
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.tab_2)
+        self.lineEdit_4.setGeometry(QtCore.QRect(240, 70, 331, 31))
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.label_6 = QtWidgets.QLabel(self.tab_2)
+        self.label_6.setGeometry(QtCore.QRect(30, 140, 221, 16))
+        self.label_6.setObjectName("label_6")
+        self.lineEdit_5 = QtWidgets.QLineEdit(self.tab_2)
+        self.lineEdit_5.setGeometry(QtCore.QRect(240, 130, 331, 31))
+        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.label_7 = QtWidgets.QLabel(self.tab_2)
+        self.label_7.setGeometry(QtCore.QRect(40, 240, 161, 21))
+        self.label_7.setObjectName("label_7")
+        self.comboBox_2 = QtWidgets.QComboBox(self.tab_2)
+        self.comboBox_2.setGeometry(QtCore.QRect(240, 230, 331, 31))
+        self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.pushButton_4 = QtWidgets.QPushButton(self.tab_2)
+        self.pushButton_4.setGeometry(QtCore.QRect(600, 70, 211, 31))
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_5 = QtWidgets.QPushButton(self.tab_2)
+        self.pushButton_5.setGeometry(QtCore.QRect(600, 130, 211, 31))
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_6 = QtWidgets.QPushButton(self.tab_2)
+        self.pushButton_6.setGeometry(QtCore.QRect(600, 190, 211, 31))
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.textBrowser_2 = QtWidgets.QTextBrowser(self.tab_2)
+        self.textBrowser_2.setGeometry(QtCore.QRect(240, 290, 331, 192))
+        self.textBrowser_2.setObjectName("textBrowser_2")
+        self.label_8 = QtWidgets.QLabel(self.tab_2)
+        self.label_8.setGeometry(QtCore.QRect(30, 190, 221, 16))
+        self.label_8.setObjectName("label_8")
+        self.lineEdit_6 = QtWidgets.QLineEdit(self.tab_2)
+        self.lineEdit_6.setGeometry(QtCore.QRect(240, 180, 331, 31))
+        self.lineEdit_6.setObjectName("lineEdit_6")
+        self.tabWidget.addTab(self.tab_2, "")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 900, 22))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        self.tabWidget.setCurrentIndex(0)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "                                                                                                            SORUMLU EKRANI "))
+        self.label.setText(_translate("MainWindow", "CINS"))
+        self.comboBox.setItemText(0, _translate("MainWindow", "SEBZE-MEYVE"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "KASAP"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "TEMIZLIK"))
+        self.comboBox.setItemText(3, _translate("MainWindow", "KURU GIDA"))
+        self.label_2.setText(_translate("MainWindow", "STOK KODU"))
+        self.label_3.setText(_translate("MainWindow", "ADET"))
+        self.label_4.setText(_translate("MainWindow", "FIYAT"))
+        self.pushButton.setText(_translate("MainWindow", "SORGULA"))
+        self.pushButton_2.setText(_translate("MainWindow", "KAYDET"))
+        self.pushButton_3.setText(_translate("MainWindow", "SIL"))
+        self.label_9.setText(_translate("MainWindow", "CESIT"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "STOK ISLEMLERI"))
+        self.label_5.setText(_translate("MainWindow", "SICIL"))
+        self.label_6.setText(_translate("MainWindow", "CALISAN AD-SOYAD"))
+        self.label_7.setText(_translate("MainWindow", "GOREVI"))
+        self.comboBox_2.setItemText(0, _translate("MainWindow", "KASIYER"))
+        self.comboBox_2.setItemText(1, _translate("MainWindow", "MUDUR"))
+        self.pushButton_4.setText(_translate("MainWindow", "SORGULA"))
+        self.pushButton_5.setText(_translate("MainWindow", "KAYDET "))
+        self.pushButton_6.setText(_translate("MainWindow", "SIL"))
+        self.label_8.setText(_translate("MainWindow", "SIFRE"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "CALISAN ISLEMLERI"))
+
+
+
+    ###################11111111111####################################
+
+        self.pushButton_4.clicked.connect(self.Query)
+        self.pushButton_5.clicked.connect(self.Save)
+        self.pushButton_6.clicked.connect(self.Delete)
+
+
+    #######################22222###################333333
+
+        self.pushButton.clicked.connect(self.SQuery)
+        self.pushButton_2.clicked.connect(self.SSave)
+        self.pushButton_3.clicked.connect(self.SDelete)
+
+
+    def Query(self):
+        self.baglanti=sqlite3.connect("stock.db")
+        self.cur=self.baglanti.cursor()
+
+        self.cur.execute("SELECT * FROM user")
+        data=self.cur.fetchall()
+        print(data)
+
+        id=self.lineEdit_4.text()
+
+        k=1
+        for i in data:
+            if id==str(i[2]):
+                # print(i)
+                self.lineEdit_5.setText(str(i[0]))
+                self.lineEdit_6.setText(str(i[1]))
+                self.textBrowser_2.setText("")
+
+
+                if i[3]=="M":
+                    self.comboBox_2.setCurrentText("MUDUR")
+                else:
+                    self.comboBox_2.setCurrentText("KASIYER")
+                break
+
+            if k==len(data):
+                self.lineEdit_5.setText("")
+                self.lineEdit_6.setText("")
+                self.textBrowser_2.setText("this id has no one ")
+            k+=1
+
+
+    def Save(self):
+        self.baglanti_ = sqlite3.connect("stock.db")
+        self.cur_ = self.baglanti_.cursor()
+
+        id_=[]
+        self.cur_.execute("SELECT * FROM user")
+        data_=self.cur_.fetchall()
+
+        for i in data_:
+            id_.append(i[2])
+
+        print(id_)
+
+        id=self.lineEdit_4.text()
+        name=self.lineEdit_5.text()
+        password=self.lineEdit_6.text()
+        position=self.comboBox_2.currentText()
+
+        if position=="KASIYER":
+            position_="C"
+
+        else:
+            position_="M"
+
+        # print(position_)
+
+        if int(id) in id_:
+            self.cur_.execute("UPDATE user SET name=?,password=?,position=? WHERE id=?",(name,int(password),position_,int(id)))
+            self.baglanti_.commit()
+
+            self.lineEdit_4.setText("")
+            self.lineEdit_5.setText("")
+            self.lineEdit_6.setText("")
+            self.textBrowser_2.setText("update user succesfully")
+
+        else:
+            self.cur_.execute("INSERT INTO user VALUES (?,?,?,?)",(name,int(password),int(id),position_))
+            self.baglanti_.commit()
+            self.lineEdit_4.setText("")
+            self.lineEdit_5.setText("")
+            self.lineEdit_6.setText("")
+            self.textBrowser_2.setText("new person added")
+
+    def Delete(self):
+        self._baglanti_ = sqlite3.connect("stock.db")
+        self._cur_ = self._baglanti_.cursor()
+
+        id = self.lineEdit_4.text()
+
+        self._cur_.execute("DELETE FROM user WHERE id=?",(int(id),))
+        self._baglanti_.commit()
+
+
+
+
+    def SQuery(self):
+        self.baglanti_1=sqlite3.connect("stock.db")
+        self.cur_1=self.baglanti_1.cursor()
+
+        kind=self.comboBox.currentText()
+        # print(kind)
+        stok=self.lineEdit.text()
+
+        if kind=="SEBZE-MEYVE":
+            self.cur_1.execute('SELECT * FROM fruit')
+            data_1=self.cur_1.fetchall()
+            print(data_1)
+
+            id_=[]
+
+            for i in data_1:
+                id_.append(i[0])
+
+            print(id_)
+
+            if int(stok) in id_:
+                for i in data_1:
+                    if int(stok)==i[0]:
+                        self.lineEdit_7.setText(i[3])
+                        self.lineEdit_2.setText(str(i[1]))
+                        self.lineEdit_3.setText(str(i[2]))
+
+                        break
+
+            else:
+                self.lineEdit_7.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("this stock not found")
+
+
+
+
+        elif kind=="KASAP":
+            self.cur_1.execute('SELECT * FROM meat')
+            data_1=self.cur_1.fetchall()
+            print(data_1)
+
+            id_=[]
+
+            for i in data_1:
+                id_.append(i[0])
+
+            print(id_)
+
+            if int(stok) in id_:
+                for i in data_1:
+                    if int(stok)==i[0]:
+                        self.lineEdit_7.setText(i[3])
+                        self.lineEdit_2.setText(str(i[1]))
+                        self.lineEdit_3.setText(str(i[2]))
+
+                        break
+
+            else:
+                self.lineEdit_7.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("this stock not found")
+
+        elif kind=="TEMIZLIK":
+            self.cur_1.execute('SELECT * FROM clean')
+            data_1=self.cur_1.fetchall()
+            print(data_1)
+
+            id_=[]
+
+            for i in data_1:
+                id_.append(i[0])
+
+            print(id_)
+
+            if int(stok) in id_:
+                for i in data_1:
+                    if int(stok)==i[0]:
+                        self.lineEdit_7.setText(i[3])
+                        self.lineEdit_2.setText(str(i[1]))
+                        self.lineEdit_3.setText(str(i[2]))
+
+                        break
+
+            else:
+                self.lineEdit_7.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("this stock not found")
+
+        elif kind=="KURU GIDA":
+            self.cur_1.execute('SELECT * FROM legumes')
+            data_1=self.cur_1.fetchall()
+            print(data_1)
+
+            id_=[]
+
+            for i in data_1:
+                id_.append(i[0])
+
+            print(id_)
+
+            if int(stok) in id_:
+                for i in data_1:
+                    if int(stok)==i[0]:
+                        self.lineEdit_7.setText(i[3])
+                        self.lineEdit_2.setText(str(i[1]))
+                        self.lineEdit_3.setText(str(i[2]))
+
+                        break
+
+            else:
+                self.lineEdit_7.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("this stock not found")
+
+
+
+
+    def SSave(self):
+        self.baglanti_2 = sqlite3.connect("stock.db")
+        self.cur_2 = self.baglanti_2.cursor()
+
+        kind=self.comboBox.currentText()
+        stok = self.lineEdit.text()
+        kind_=self.lineEdit_7.text()
+
+        piece=self.lineEdit_2.text()
+        price=self.lineEdit_3.text()
+
+        if kind=="SEBZE-MEYVE":
+            self.cur_1.execute('SELECT * FROM fruit')
+            data_1=self.cur_1.fetchall()
+
+            id_1=[]
+
+            for i in data_1:
+                id_1.append(i[0])
+
+            if int(stok) in id_1:
+                self.cur_2.execute('UPDATE fruit SET piece=?,price=?,kind=? WHERE code=?',(int(piece),int(price),kind_,int(stok)))
+                self.baglanti_2.commit()
+                self.lineEdit_7.setText("")
+                self.lineEdit.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("stok is update")
+
+            else:
+                self.cur_2.execute('INSERT INTO fruit VALUES (?,?,?,?)',(int(stok),int(piece),int(price),kind_))
+                self.baglanti_2.commit()
+                self.lineEdit_7.setText("")
+                self.lineEdit.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("new stok added")
+
+        elif kind=="KASAP":
+            self.cur_1.execute('SELECT * FROM meat')
+            data_1=self.cur_1.fetchall()
+
+            id_1=[]
+
+            for i in data_1:
+                id_1.append(i[0])
+
+            if int(stok) in id_1:
+                self.cur_2.execute('UPDATE meat SET piece=?,price=?,kind=? WHERE code=?',(int(piece),int(price),kind_,int(stok)))
+                self.baglanti_2.commit()
+                self.lineEdit_7.setText("")
+                self.lineEdit.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("stok is update")
+
+            else:
+                self.cur_2.execute('INSERT INTO meat VALUES (?,?,?,?)',(int(stok),int(piece),int(price),kind_))
+                self.baglanti_2.commit()
+                self.lineEdit_7.setText("")
+                self.lineEdit.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("new stok added")
+
+        elif kind=="TEMIZLIK":
+            self.cur_1.execute('SELECT * FROM clean')
+            data_1=self.cur_1.fetchall()
+
+            id_1=[]
+
+            for i in data_1:
+                id_1.append(i[0])
+
+            if int(stok) in id_1:
+                self.cur_2.execute('UPDATE clean SET piece=?,price=?,kind=? WHERE code=?',(int(piece),int(price),kind_,int(stok)))
+                self.baglanti_2.commit()
+                self.lineEdit_7.setText("")
+                self.lineEdit.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("stok is update")
+
+            else:
+                self.cur_2.execute('INSERT INTO clean VALUES (?,?,?,?)',(int(stok),int(piece),int(price),kind_))
+                self.baglanti_2.commit()
+                self.lineEdit_7.setText("")
+                self.lineEdit.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("new stok added")
+
+        elif kind=="KURU GIDA":
+            self.cur_1.execute('SELECT * FROM legumes')
+            data_1=self.cur_1.fetchall()
+
+            id_1=[]
+
+            for i in data_1:
+                id_1.append(i[0])
+
+            if int(stok) in id_1:
+                self.cur_2.execute('UPDATE legumes SET piece=?,price=?,kind=? WHERE code=?',(int(piece),int(price),kind_,int(stok)))
+                self.baglanti_2.commit()
+                self.lineEdit_7.setText("")
+                self.lineEdit.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("stok is update")
+
+            else:
+                self.cur_2.execute('INSERT INTO legumes VALUES (?,?,?,?)',(int(stok),int(piece),int(price),kind_))
+                self.baglanti_2.commit()
+                self.lineEdit_7.setText("")
+                self.lineEdit.setText("")
+                self.lineEdit_2.setText("")
+                self.lineEdit_3.setText("")
+                self.textBrowser.setText("new stok added")
+
+
+    def SDelete(self):
+        self.baglanti_3 = sqlite3.connect("stock.db")
+        self.cur_3 = self.baglanti_3.cursor()
+
+        kind = self.comboBox.currentText()
+        stok = self.lineEdit.text()
+
+        if kind=="SEBZE-MEYVE":
+            self.cur_3.execute("DELETE FROM fruit WHERE code=?",(int(stok),))
+            self.baglanti_3.commit()
+            self.textBrowser.setText("stock deleted")
+
+        elif kind=="KASAP":
+            self.cur_3.execute("DELETE FROM meat WHERE code=?",(int(stok),))
+            self.baglanti_3.commit()
+            self.textBrowser.setText("stock deleted")
+
+        elif kind=="TEMIZLIK":
+            self.cur_3.execute("DELETE FROM clean WHERE code=?",(int(stok),))
+            self.baglanti_3.commit()
+            self.textBrowser.setText("stock deleted")
+
+        elif kind=="KURU GIDA":
+            self.cur_3.execute("DELETE FROM legumes WHERE code=?",(int(stok),))
+            self.baglanti_3.commit()
+            self.textBrowser.setText("stock deleted")
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow_2()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
